@@ -10,11 +10,19 @@ namespace CSharpPro
 {  
     class Program
     {   public static void FillArr(string [] ms)
-        { 
+        {   string [] mas;
+            Console.WriteLine("enter amount of words");
+            int n=Convert.ToInt32(Console.ReadLine);
+            mas=new string[n];
             string str="/0";
             Console.WriteLine("enter words separated by spaces");
             str = Console.ReadLine();
-            ms=str.Split(" ",1,StringSplitOptions.None);
+            mas=str.Split(" ",1,StringSplitOptions.None);
+             if ((mas.Length>ms.Length)||(mas.Length<ms.Length))
+            {
+                Array.Resize(ms,n);
+            }
+            ms=mas;
         }
         public static void FillArrFile()
         {
@@ -49,43 +57,30 @@ namespace CSharpPro
          string [] sResWords;
 
         Console.WriteLine("Program to find all words less than three symbols");
-        
+        Console.WriteLine("choose option to enter data");
+        Console.WriteLine("1=from file, all else from console");
         int k=Convert.ToInt32(Console.ReadLine());
         switch(k)
         {
         case 1:
-            { Console.WriteLine("enter begin range");
-              n=Convert.ToInt32(Console.ReadLine());
-              Console.WriteLine("enter end range");
-              m=Convert.ToInt32(Console.ReadLine());
-              Program.RecRangereturn(n,m);
-                break;
-                }
-        case 2:
-           {  Console.WriteLine("enter begin range");
-              n=Convert.ToInt32(Console.ReadLine());
-              Console.WriteLine("enter end range  ");
-              m=Convert.ToInt32(Console.ReadLine());
-              result=Program.Recsumreturn(n,m);
-              Console.WriteLine("result is "+result);
+           {  sSourceWords=new string[5];
+              Program.FillArrFile(sSourceWords);
               break;
               }
-            case 3:
-            { Console.WriteLine("enter m");
-              m=Convert.ToInt32(Console.ReadLine());
-              Console.WriteLine("enter n");
-              n=Convert.ToInt32(Console.ReadLine());
-              result=Program.Ackkerman(n,m);
-              Console.WriteLine("result is "+result);
-              break;
-                }
-            default:
-              {
-
-              Console.WriteLine("you didn't enter anything");
-            break;
-            }
+        
+        default:
+            { sSourceWords=new string[5];
+              Program.FillArr(sSourceWords);
+               break;
+             }
         }
+        sResWords=new string[sSourceWords.Length];
+        Program.CalcRes(sSourceWords,sResWords);
+        Program.OutPutArray(sResWords);
+
+            
+        }
+        
 
     }
 
