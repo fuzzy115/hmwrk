@@ -25,11 +25,12 @@ namespace CSharpPro
         {   string str="";
             string [] mas;
             StreamReader sr = new StreamReader(@".\DummyFile.txt");
-        while (sr.EndOfStream)
+        while (!sr.EndOfStream)
               {
-                str+=sr.ReadLine();
+                str=sr.ReadLine();
               }
             mas=str.Split(" ");
+            //OutPutArray(mas);
              if ((mas.Length>ms.Length)||(mas.Length<ms.Length))
             {
                 Array.Resize(ref ms,mas.Length);
@@ -39,9 +40,15 @@ namespace CSharpPro
         public static void OutPutArray(string [] res)
         {
             int i=0;
-            for (i=0;i<res.Length; i++)
+            if (res[0]==null)
             {
-                Console.WriteLine(res[i]);
+                Console.WriteLine("no such words");
+            }
+            else {
+                 for (i=0;i<res.Length; i++)
+                {
+                   Console.WriteLine(res[i]);
+                }
             }
         }
 
@@ -77,9 +84,9 @@ namespace CSharpPro
               }
         case 2:
             {
-                sSourceWords=new string [] {"hello", "2", "world", ":-)"};
-              //  sSourceWords={"1234", "1567", "-2", "computer science"};
-              //  sSourceWords={"Russia", "Denmark", "Kazan"};
+              //  sSourceWords=new string [] {"hello", "2", "world", ":-)"};
+              //  sSourceWords=new string [] {"1234", "1567", "-2", "computer science"};
+                sSourceWords=new string [] {"Russia", "Denmark", "Kazan"};
                 break;
             }
         default:
