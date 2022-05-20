@@ -9,24 +9,32 @@ using System.Threading.Tasks;
 namespace CSharpPro
 {  
     class Program
-    {   public static void FillArr(string [] ms)
+    {   public static void FillArr(ref string [] ms)
         {   string [] mas;
-            Console.WriteLine("enter amount of words");
-            int n=Convert.ToInt32(Console.ReadLine);
-            mas=new string[n];
-            string str="/0";
+            string str="";
             Console.WriteLine("enter words separated by spaces");
             str = Console.ReadLine();
-            mas=str.Split(" ",1,StringSplitOptions.None);
+            mas=str.Split(" ");
              if ((mas.Length>ms.Length)||(mas.Length<ms.Length))
             {
-                Array.Resize(ms,n);
+                Array.Resize(ref ms,mas.Length);
             }
             ms=mas;
         }
-        public static void FillArrFile()
-        {
-            
+        public static void FillArrFile(ref string [] ms)
+        {   string str="";
+            string [] mas;
+            StreamReader sr = new StreamReader(@".\DummyFile.txt");
+        while (sr.EndOfStream)
+              {
+                str+=sr.ReadLine();
+              }
+            mas=str.Split(" ");
+             if ((mas.Length>ms.Length)||(mas.Length<ms.Length))
+            {
+                Array.Resize(ref ms,mas.Length);
+            }
+            ms=mas;
         }
         public static void OutPutArray(string [] res)
         {
@@ -58,19 +66,25 @@ namespace CSharpPro
 
         Console.WriteLine("Program to find all words less than three symbols");
         Console.WriteLine("choose option to enter data");
-        Console.WriteLine("1=from file, all else from console");
+        Console.WriteLine("1=from file, 2= static definition, all else from console");
         int k=Convert.ToInt32(Console.ReadLine());
         switch(k)
         {
         case 1:
            {  sSourceWords=new string[5];
-              Program.FillArrFile(sSourceWords);
+              Program.FillArrFile(ref sSourceWords);
               break;
               }
-        
+        case 2:
+            {
+                sSourceWords=new string [] {"hello", "2", "world", ":-)"};
+              //  sSourceWords={"1234", "1567", "-2", "computer science"};
+              //  sSourceWords={"Russia", "Denmark", "Kazan"};
+                break;
+            }
         default:
             { sSourceWords=new string[5];
-              Program.FillArr(sSourceWords);
+              Program.FillArr(ref sSourceWords);
                break;
              }
         }
@@ -84,7 +98,4 @@ namespace CSharpPro
 
     }
 
-        
-
-    }
 }
