@@ -1,0 +1,15 @@
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.csproj.AssemblyReference.cache
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.AssemblyInfoInputs.cache
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.AssemblyInfo.cs
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.csproj.CoreCompileInputs.cache
+C:\Users\chizh\Documents\113\118\cscharp\121\bin\Debug\net6.0\121.exe
+C:\Users\chizh\Documents\113\118\cscharp\121\bin\Debug\net6.0\121.deps.json
+C:\Users\chizh\Documents\113\118\cscharp\121\bin\Debug\net6.0\121.runtimeconfig.json
+C:\Users\chizh\Documents\113\118\cscharp\121\bin\Debug\net6.0\121.dll
+C:\Users\chizh\Documents\113\118\cscharp\121\bin\Debug\net6.0\121.pdb
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.dll
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\refint\121.dll
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.pdb
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\121.genruntimeconfig.cache
+C:\Users\chizh\Documents\113\118\cscharp\121\obj\Debug\net6.0\ref\121.dll
